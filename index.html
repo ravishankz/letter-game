@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informal Letter Structure Practice</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 text-gray-800 font-sans min-h-screen flex flex-col select-none">
+
+
+
+<header class="bg-white border-b-4 border-purple-200 py-4 px-6 shadow-md flex flex-col md:flex-row justify-between items-center gap-4">
+
+    <div>
+        <h1 class="text-2xl md:text-3xl font-bold text-purple-700 flex items-center gap-2">
+            <span>✉️</span> Informal Letter Structure Practice
+        </h1>
+
+        <p class="text-gray-600 text-sm mt-1">
+            Drag or tap the letter parts and place them in the correct positions to build your letter.
+        </p>
+    </div>
+
+    <button id="btn-reset" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 py-2 rounded-xl shadow-md transition-all flex items-center gap-2 active:scale-95">
+        <i class="fa-solid fa-rotate-right"></i>
+        Reset Game
+    </button>
+
+</header>
+
+
+
+
+
+
+<main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+
+
+
+
+
+
+<!-- ================= LETTER PARTS ================= -->
+
+
+<section class="student-card bg-white p-5 rounded-2xl shadow-lg border-2 border-blue-100 flex flex-col relative min-h-[300px]">
+
+
+<h2 class="text-xl font-bold text-blue-600 mb-1 flex items-center justify-between">
+    <span>🧩 Letter Parts</span>
+    <span id="score-tracker" class="text-xs font-semibold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full">0 / 9 Completed</span>
+</h2>
+
+
+
+<p class="text-xs text-gray-500 mb-4">
+    Drag each part to the correct zone on the blueprint.
+</p>
+
+
+
+
+
+<div class="relative flex-1">
+
+
+    <div id="source-tags" 
+    class="flex flex-wrap gap-3 content-start">
+
+    </div>
+
+
+
+
+
+
+    <!-- SUCCESS PANEL -->
+
+    <div id="completion-banner" 
+    class="hidden absolute inset-0 bg-green-500/95 rounded-2xl flex flex-col items-center justify-center text-white p-6 text-center z-20">
+
+
+        <i class="fa-solid fa-trophy text-6xl mb-4 text-yellow-300 animate-bounce"></i>
+
+
+        <h3 class="text-3xl font-bold">
+
+            Excellent Work!
+
+        </h3>
+
+
+        <p class="mt-2 text-green-100 text-sm">
+
+            You successfully built the complete informal letter structure!
+
+        </p>
+
+        <button id="btn-play-again" class="mt-6 bg-white text-green-700 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:bg-green-50 transition-all active:scale-95">
+            Play Again
+        </button>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= BLUEPRINT ================= -->
+
+
+<section class="student-card bg-white p-5 rounded-2xl shadow-lg border-2 border-green-100 flex flex-col">
+
+
+
+<h2 class="text-xl font-bold text-green-600 mb-1">
+
+📝 Letter Blueprint
+
+</h2>
+
+
+
+<p class="text-xs text-gray-500 mb-4">
+
+Arrange the letter parts in the correct order.
+
+</p>
+
+
+
+
+
+
+<div class="letter-blueprint border-4 border-dashed border-green-200 rounded-2xl p-4 md:p-5 flex-1 bg-green-50 min-h-[500px] flex flex-col justify-between gap-4">
+
+
+
+
+
+<!-- Address -->
+
+<div class="flex flex-col items-start gap-3 w-full">
+
+
+<div 
+class="drop-zone w-52 h-12"
+data-expected="sender-address">
+
+</div>
+
+
+
+<div 
+class="drop-zone w-52 h-12"
+data-expected="date">
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Salutation -->
+
+
+<div 
+class="drop-zone w-48 h-12"
+data-expected="salutation">
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Body -->
+
+
+<div class="flex flex-col gap-3 w-full">
+
+
+<div 
+class="drop-zone w-full h-12"
+data-expected="introduction">
+
+</div>
+
+
+
+<div 
+class="drop-zone w-full h-16"
+data-expected="body-details">
+
+</div>
+
+
+
+<div 
+class="drop-zone w-full h-12"
+data-expected="conclusion">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Ending -->
+
+
+<div class="flex flex-col items-start gap-3 w-full">
+
+
+<div 
+class="drop-zone w-52 h-12"
+data-expected="complimentary-close">
+
+</div>
+
+
+
+<div 
+class="drop-zone w-48 h-12"
+data-expected="signature">
+
+</div>
+
+
+
+<div 
+class="drop-zone w-52 h-12"
+data-expected="name">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= LETTER VIEW ================= -->
+
+
+<section class="student-card bg-white p-5 rounded-2xl shadow-lg border-2 border-pink-100 flex flex-col">
+
+
+
+<h2 class="text-xl font-bold text-pink-600 mb-1">
+
+✉️ Your Letter
+
+</h2>
+
+
+
+
+<p class="text-xs text-gray-500 mb-4">
+
+Your completed letter will appear here.
+
+</p>
+
+
+
+
+
+
+<div class="letter-preview border-2 border-pink-200 rounded-2xl p-6 bg-yellow-50 flex-1 shadow-inner text-sm leading-relaxed font-serif min-h-[500px]">
+
+
+
+
+
+<div 
+id="preview-address-block"
+class="text-left whitespace-pre-line min-h-[4rem]">
+</div>
+
+
+
+
+
+
+
+<div 
+id="preview-salutation"
+class="min-h-[1.5rem] my-3">
+
+</div>
+
+
+
+
+
+
+
+<div class="space-y-4 text-justify">
+
+
+<p id="preview-intro"></p>
+
+
+<p id="preview-details"></p>
+
+
+<p id="preview-conclusion"></p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="pt-5 space-y-1">
+
+
+<p id="preview-close"></p>
+
+
+<p id="preview-sig" class="italic font-normal"></p>
+
+
+<p id="preview-name" class="font-normal"></p>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<footer class="bg-white border-t py-3 text-center text-xs text-gray-500">
+
+🌟 Grade 8 English Learning Activity &bull; Created by Ruwanthi Thakshila
+
+</footer>
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
